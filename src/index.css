@@ -1,3 +1,4 @@
+/* Global Reset */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
@@ -7,14 +8,13 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* MAIN PAGE STYLING  */
+/* MAIN PAGE STYLING */
 .main {
   display: flex;
   min-height: 100vh;
 }
 
-/* SIDEBAR STYLING  */
-
+/* SIDEBAR STYLING */
 .sidebar {
   min-width: 280px;
   border: 2px solid #5ea2bf;
@@ -46,42 +46,51 @@
   flex-direction: column;
   gap: 16px;
 }
+
 .sidebar_menu--link {
   display: flex;
   gap: 14px;
   align-items: center;
 }
+
 .sidebar_menu--link:nth-child(2) .sideLink {
   margin-left: 30px;
+}
+
+.sidebar_menu--link .sideLink:hover {
   background-image: linear-gradient(to right, #cf3272, #f0924a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .sideLink {
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.371);
+  color: rgba(0, 0, 0, 0.344);
 }
 
-/* BRAND OWNER PAGE STYLING  */
+/* BRAND OWNER PAGE STYLING */
 .brandOwner {
   flex: 1;
 }
+
 .brandOwner_header {
-  margin: 8px;
+  margin: 6px;
   border: 3px solid rgba(45, 45, 45, 0.142);
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: 40px;
-  padding-block: 16px;
+  padding-block: 12px;
+  
   div {
     display: flex;
     gap: 12px;
     align-items: center;
+    
     .helpIcon {
       background: linear-gradient(to bottom, #cf3272, #f0924a);
       color: white;
@@ -90,11 +99,13 @@
     }
   }
 }
+
 .brandOwner_profile {
   padding: 40px;
   display: flex;
   justify-content: space-between;
 }
+
 .profile_text {
   font-size: 24px;
   font-weight: 700;
@@ -103,12 +114,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .profile_button {
   padding: 8px 16px;
   color: white;
   background: linear-gradient(to bottom, #cf3272, #f0924a);
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .brandOwner_searchBox {
@@ -117,49 +130,66 @@
   padding: 16px 64px;
   align-items: center;
 }
+
 .searchUser {
   border: 2px solid rgba(0, 0, 0, 0.089);
-  padding: 16px;
+  padding: 15px;
   border-radius: 8px;
   display: flex;
   gap: 6px;
   align-items: center;
+  
   input {
     border: none;
     width: 100%;
   }
+  
   input:focus {
     outline: none;
   }
 }
+
 ::placeholder {
-  color: rgba(0, 0, 0, 0.537);
+  color: rgba(3, 3, 3, 0.537);
 }
 
 .brandOwner_table {
   padding: 0 40px;
+  
   table {
     width: 100%;
     border-spacing: 0;
 
     thead tr th {
-      background-color: #f3f3f3;
+      background-color: #e1e1e1;
       text-align: start;
-      padding: 20px 0;
+      padding: 20px;
       color: #cf3272;
       font-size: 14px;
     }
+    
     thead tr th:first-child {
       padding-inline-start: 20px;
     }
+    
     thead tr th:nth-child(2) {
       display: flex;
       align-items: center;
       gap: 2px;
     }
+    
     thead tr th input[type="checkbox"] {
       transform: scale(1.5);
+      cursor: pointer;
     }
+    
+  }
+  .table_body tr td {
+    padding: 10px;
+    font-size: .8rem;
+  }
+  .table_body tr:nth-child(odd){
+    background-color: #f3f3f3b3;
   }
 
   .table_pagination {
@@ -173,13 +203,13 @@
   }
 }
 
-/* INFLUENCERS PROFILE PAGE STYLING  */
-
+/* INFLUENCERS PROFILE PAGE STYLING */
 .infPage {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  
   p {
     font-size: 32px;
     font-weight: 700;
@@ -190,13 +220,13 @@
   }
 }
 
-/* TRANSACTIONS PROFILE PAGE STYLING  */
-
+/* TRANSACTIONS PROFILE PAGE STYLING */
 .txnPage {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  
   p {
     font-size: 32px;
     font-weight: 700;
@@ -204,5 +234,87 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+}
+
+/* UPDATE USER MODAL */
+.updateUser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form button {
+  background: linear-gradient(to bottom, #cf3272, #f0924a);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50%;
+  align-self: center;
+  transition: background-color 0.3s;
+}
+
+.form button:hover {
+  background: #0056b3; 
+  transform: scale(1.05); 
+}
+
+.menu_button{
+  display: none;
+}
+
+.overlay-bg{
+  display: none;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.363);
+}
+
+/* RESPONSIVE DESIGN  */
+@media (max-width: 768px) {
+  .menu_button{
+    display: block;
+  }
+  .sidebar{
+    display: none;
+    position: absolute;
+    min-height: 100vh;
+    z-index: 9999;
   }
 }

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <div className="sidebar" id="sidebar">
       <div className="sidebar_header">
         <p>CULTCREATOR</p>
         <p>Find Your Digital Content Creator</p>
