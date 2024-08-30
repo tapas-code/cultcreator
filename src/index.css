@@ -74,6 +74,9 @@
 /* BRAND OWNER PAGE STYLING */
 .brandOwner {
   flex: 1;
+  @media (max-width: 768px) {
+    min-width: 100vw;
+  }
 }
 
 .brandOwner_header {
@@ -104,6 +107,8 @@
   padding: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 8px;
 }
 
 .profile_text {
@@ -113,6 +118,9 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  @media (max-width:768px) {
+    font-size: 18px;
+  }
 }
 
 .profile_button {
@@ -122,6 +130,9 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  @media (max-width:768px) {
+    text-wrap: nowrap;
+  }
 }
 
 .brandOwner_searchBox {
@@ -129,6 +140,9 @@
   justify-content: space-between;
   padding: 16px 64px;
   align-items: center;
+  @media (max-width: 768px) {
+    padding: 0 40px 16px;
+  }
 }
 
 .searchUser {
@@ -155,9 +169,11 @@
 
 .brandOwner_table {
   padding: 0 40px;
+  overflow-x: auto;
   
   table {
     width: 100%;
+    min-width: 720px;
     border-spacing: 0;
 
     thead tr th {
@@ -200,6 +216,7 @@
     justify-content: end;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 720px;
   }
 }
 
@@ -307,7 +324,7 @@
 }
 
 /* RESPONSIVE DESIGN  */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .menu_button{
     display: block;
   }
